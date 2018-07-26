@@ -1,0 +1,12 @@
+mat-toolbar button, mat-toolbar span {
+  margin-right: 0.5em;
+}
+
+sub {
+  font-size: x-small;
+}
+
+.toolbar-user {
+  flex: 1 0 auto;
+  text-align: right;
+}
