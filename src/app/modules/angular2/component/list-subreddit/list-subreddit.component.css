@@ -4,6 +4,7 @@
 
 .example-card {
   max-width: 30%;
+  margin: 0 auto;
 }
 
 .example-header-image {
@@ -16,13 +17,25 @@
   text-align: right;
 }
 
-.subtitle-style{
+.subtitle-style {
   font-size: x-small;
 }
 
-/*.date-style {*/
-/*flex: 1 0 auto;*/
-/*text-align: right;*/
-/*font-size: small;*/
-/*padding: 0px !important;*/
-/*}*/
+.img-style {
+  /*max-height:50%;*/
+  /*max-width: 50%;*/
+  /*margin:0 auto;*/
+}
+
+.mat-light {
+  border: #0d0d0d;
+  color: rgba(255, 255, 255, 1);
+}
+
+mat-card {
+  top: 45px;
+}
+
+.action-button-style {
+  background-color: whitesmoke;
+}

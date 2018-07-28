@@ -10,3 +10,19 @@ sub {
   flex: 1 0 auto;
   text-align: right;
 }
+
+.toolbar-container {
+  height: 45px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-bottom: 0.5em;
+}
+
+mat-toolbar {
+  padding-left: 0px !important;
+}
+
+.content {
+  top: 45px !important;
+}
