@@ -6,10 +6,10 @@ sub {
   font-size: x-small;
 }
 
-.toolbar-user {
-  flex: 1 0 auto;
-  text-align: right;
-}
+/*.toolbar-user {*/
+  /*flex: 1 0 auto;*/
+  /*text-align: right;*/
+/*}*/
 
 .toolbar-container {
   height: 45px;
