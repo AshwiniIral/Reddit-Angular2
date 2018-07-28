@@ -46,6 +46,12 @@ export class ListSubredditComponent implements OnInit {
 
   public hideSubreddit(indx) {
     this.subReddits[indx].hidden = true;
+    if (this.likedReddits.includes(indx)) {
+      this.likedReddits.splice(this.likedReddits.indexOf(indx), 1);
+    }
+    if (this.dislikedReddits.includes(indx)) {
+      this.dislikedReddits.splice(this.dislikedReddits.indexOf(indx), 1);
+    }
   }
 
   public subredditOpinion(opinion: string, indx: string) {

@@ -19,9 +19,9 @@ sub {
   padding-bottom: 0.5em;
 }
 
-mat-toolbar {
-  padding-left: 0px !important;
-}
+/*mat-toolbar {*/
+  /*padding-left: 0px !important;*/
+/*}*/
 
 .content {
   top: 45px !important;
