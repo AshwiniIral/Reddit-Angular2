@@ -2,12 +2,12 @@
   padding-top: 10px;
 }
 
-.example-card {
+.subreddit-card {
   max-width: 30%;
   margin: 0 auto;
 }
 
-.example-header-image {
+.thumbnail-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
 }
@@ -74,4 +74,8 @@ mat-card {
   -webkit-hyphens: auto;
   hyphens: auto;
 
+}
+
+mat-card-content {
+  padding-bottom: 10px;
 }
