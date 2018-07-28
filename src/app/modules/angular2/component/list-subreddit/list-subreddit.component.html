@@ -20,12 +20,12 @@
       <!--{{reddit.selftext}}-->
       <!--</mat-card-content>-->
       <mat-card-actions class="action-button-style">
-        <button mat-icon-button>
-          <mat-icon class="mat-light">thumb_up_outline</mat-icon>
+        <button mat-icon-button (click)="subredditOpinion('thumb_up',indx)">
+          <mat-icon class="mat-light" id="thumb_up{{indx}}">thumb_up</mat-icon>
         </button>
         <span>{{reddit.ups}}</span>
-        <button mat-icon-button (click)="dislike(indx)">
-          <mat-icon class="mat-light" id="dislike{{indx}}">thumb_down</mat-icon>
+        <button mat-icon-button (click)="subredditOpinion('thumb_down',indx)">
+          <mat-icon class="mat-light" id="thumb_down{{indx}}">thumb_down</mat-icon>
         </button>
         <span>{{reddit.downs}}</span>
       </mat-card-actions>

@@ -21,8 +21,7 @@ export class FetchSubredditService {
     const parsedResponse = response.json();
     const subredditObj: any[] = [];
     for (const subred of parsedResponse.data.children) {
-      subred.liked = false;
-      subred.unliked = false;
+      subred.data.opinion = '';
       subredditObj.push(subred.data);
     }
     return Promise.resolve(subredditObj);
