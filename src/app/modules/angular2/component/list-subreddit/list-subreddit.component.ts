@@ -87,8 +87,37 @@ export class ListSubredditComponent implements OnInit {
         prevOpinionDiv.classList.add('mat-light');
         this.subReddits[indx].ups = this.subReddits[indx].ups - 1;
       }
+    }
+  }
+
+  public listOpinions(opinionType: string) {
+    console.log(opinionType)
+    const modifiedSubReddits: any[] = [];
+    if (opinionType === 'like') {
+      if (this.likedReddits.length !== 0) {
+        for (const indx of this.likedReddits) {
+          modifiedSubReddits.push(this.subReddits[indx]);
+        }
+        this.subReddits = modifiedSubReddits;
+      } else {
+        this.snackBar.open('You have not liked any subreddits', '', {
+          duration: 1000
+        });
+      }
+    } else {
+      if (this.dislikedReddits.length !== 0) {
+        for (const indx of this.dislikedReddits) {
+          modifiedSubReddits.push(this.subReddits[indx]);
+        }
+        this.subReddits = modifiedSubReddits;
+      } else {
+        this.snackBar.open('Great!! You have not disliked any subreddits', '', {
+          duration: 1000
+        });
+      }
 
     }
+
   }
 
 }
