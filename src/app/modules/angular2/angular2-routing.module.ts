@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {DisplayRedditComponent} from './display-reddit/display-reddit.component';
+import {ListSubredditComponent} from './component/list-subreddit/list-subreddit.component';
 
 const routes: Routes = [
-  {path: '', component: DisplayRedditComponent}];
+  {path: '', component: ListSubredditComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
