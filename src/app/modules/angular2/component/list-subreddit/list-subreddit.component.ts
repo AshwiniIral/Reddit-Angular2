@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {subRedditData} from '../../../../mock-data/reddit-mock';
-import {FetchSubredditService} from "../../services/fetch-subreddit/fetch-subreddit.service";
-import {constants} from "../../../../properties/constants";
+import {FetchSubredditService} from '../../services/fetch-subreddit/fetch-subreddit.service';
+import {constants} from '../../../../properties/constants';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-list-subreddit',
@@ -12,10 +12,22 @@ export class ListSubredditComponent implements OnInit {
 
   public subReddits: any[];
 
-  constructor(private fetchSubredditService: FetchSubredditService) {
+  constructor(public snackBar: MatSnackBar,
+              private fetchSubredditService: FetchSubredditService) {
   }
 
   ngOnInit() {
+    this.fetchContent();
+  }
+
+  public refresh() {
+    this.fetchContent();
+    this.snackBar.open('refreshed', '', {
+      duration: 500
+    });
+  }
+
+  public fetchContent() {
     const ssubReddits = this.fetchSubredditService.getsubreddits(constants.angularSubreddit);
     ssubReddits.then(subredditObj => {
       this.subReddits = subredditObj;
