@@ -26,6 +26,8 @@ export class ListSubredditComponent implements OnInit {
   }
 
   public refresh() {
+    this.likedReddits = [];
+    this.dislikedReddits = [];
     this.fetchContent();
     this.snackBar.open('refreshed', '', {
       duration: 500
@@ -91,7 +93,8 @@ export class ListSubredditComponent implements OnInit {
   }
 
   public listOpinions(opinionType: string) {
-    console.log(opinionType)
+    const listLikeButton = document.getElementById('showLike');
+    const listDislikeButton = document.getElementById('showDislike');
     const modifiedSubReddits: any[] = [];
     if (opinionType === 'like') {
       if (this.likedReddits.length !== 0) {
@@ -104,6 +107,8 @@ export class ListSubredditComponent implements OnInit {
           duration: 1000
         });
       }
+      listLikeButton.classList.add('list-opinion');
+      listDislikeButton.classList.remove('list-opinion');
     } else {
       if (this.dislikedReddits.length !== 0) {
         for (const indx of this.dislikedReddits) {
@@ -115,9 +120,9 @@ export class ListSubredditComponent implements OnInit {
           duration: 1000
         });
       }
-
+      listDislikeButton.classList.add('list-opinion');
+      listLikeButton.classList.remove('list-opinion');
     }
-
   }
 
 }
