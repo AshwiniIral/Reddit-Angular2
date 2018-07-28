@@ -5,7 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './root/app.component';
-import {Angular2Module} from './modules/angular2/angular2.module';
+import {SubredditModule} from './modules/subreddit/subreddit.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +13,7 @@ import {Angular2Module} from './modules/angular2/angular2.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    Angular2Module
+    SubredditModule
   ],
   providers: [],
   bootstrap: [AppComponent]

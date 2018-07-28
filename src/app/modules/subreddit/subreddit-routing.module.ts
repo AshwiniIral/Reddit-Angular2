@@ -9,5 +9,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class Angular2RoutingModule {
+export class SubredditRoutingModule {
 }
