@@ -40,14 +40,14 @@ mat-card {
   background-color: whitesmoke;
 }
 
-.like-button-position{
+.like-button-position {
   background-color: whitesmoke;
   position: fixed;
   bottom: 9vh;
   right: 5vw;
 }
 
-.dislike-button-position{
+.dislike-button-position {
   background-color: whitesmoke;
   position: fixed;
   bottom: 9vh;
@@ -61,6 +61,17 @@ mat-card {
   right: 3vw;
 }
 
-.list-opinion{
+.list-opinion {
   background-color: gray;
+}
+
+.dont-break-out {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
 }

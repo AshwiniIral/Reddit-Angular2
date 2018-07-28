@@ -11,14 +11,13 @@
           </button>
         </div>
       </mat-card-header>
+      <mat-card-content>
+        <a href={{reddit.url}} target="_blank" class="dont-break-out">{{reddit.url}}</a>
+      </mat-card-content>
       <img *ngIf="reddit.preview"
            class="img-style"
            mat-card-image src={{reddit.preview?.images[0].source.url}}
            alt="subreddit image">
-      <!--<div class="date-style"></div>-->
-      <!--<mat-card-content>-->
-      <!--{{reddit.selftext}}-->
-      <!--</mat-card-content>-->
       <mat-card-actions class="action-button-style">
         <button mat-icon-button (click)="subredditOpinion('thumb_up',indx)">
           <mat-icon class="mat-light" id="thumb_up{{indx}}">thumb_up</mat-icon>
