@@ -37,32 +37,32 @@ mat-card {
 }
 
 .action-button-style {
-  background-color: whitesmoke;
+  background-color: lightblue;
 }
 
 .like-button-position {
-  background-color: whitesmoke;
+  background-color: lightblue;
   position: fixed;
   bottom: 9vh;
   right: 5vw;
 }
 
 .dislike-button-position {
-  background-color: whitesmoke;
+  background-color: lightblue;
   position: fixed;
   bottom: 9vh;
   right: 2vw;
 }
 
 .refresh-button-position {
-  background-color: whitesmoke;
+  background-color: lightblue;
   position: fixed;
   bottom: 3vh;
   right: 3vw;
 }
 
 .list-opinion {
-  background-color: gray;
+  background-color: darkcyan;
 }
 
 .dont-break-out {
