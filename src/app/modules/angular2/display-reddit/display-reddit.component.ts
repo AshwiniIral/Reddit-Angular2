@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {subRedditData} from '../../../mock-data/reddit-mock';
 
 @Component({
   selector: 'app-display-reddit',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayRedditComponent implements OnInit {
 
-  constructor() { }
+  public subReddits: any[];
 
   ngOnInit() {
+    this.subReddits = subRedditData;
+    console.log(this.subReddits);
   }
 
 }

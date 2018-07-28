@@ -1,0 +1,28 @@
+.card-style {
+  padding-top: 10px;
+}
+
+.example-card {
+  max-width: 30%;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.close-button {
+  flex: 1 0 auto;
+  text-align: right;
+}
+
+.subtitle-style{
+  font-size: x-small;
+}
+
+/*.date-style {*/
+  /*flex: 1 0 auto;*/
+  /*text-align: right;*/
+  /*font-size: small;*/
+  /*padding: 0px !important;*/
+/*}*/

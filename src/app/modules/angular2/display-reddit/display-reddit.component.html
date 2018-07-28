@@ -1,5 +1,31 @@
 <app-home>
-  <p>
-    display-reddit works!
-  </p>
+  <div *ngFor="let reddit of subReddits" class="card-style">
+    <mat-card class="example-card"  style="margin:0 auto;">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{reddit.title}}</mat-card-title>
+        <mat-card-subtitle class="subtitle-style">{{reddit.created_utc|date}}</mat-card-subtitle>
+        <div class="close-button">
+          <button mat-icon-button>
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </mat-card-header>
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <!--<div class="date-style"></div>-->
+      <!--<mat-card-content>-->
+        <!--{{reddit.selftext}}-->
+      <!--</mat-card-content>-->
+      <mat-card-actions>
+        <button mat-icon-button>
+          <mat-icon>thumb_up_outline</mat-icon>
+        </button>
+        <span>{{reddit.downs}}</span>
+        <button mat-icon-button>
+          <mat-icon>thumb_down</mat-icon>
+        </button>
+        <span>{{reddit.ups}}</span>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </app-home>
