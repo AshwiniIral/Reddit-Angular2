@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {MatSnackBar} from '@angular/material';
+
 import {FetchSubredditService} from '../../services/fetch-subreddit/fetch-subreddit.service';
 import {constants} from '../../../../properties/constants';
-import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-list-subreddit',
@@ -10,9 +11,9 @@ import {MatSnackBar} from '@angular/material';
 })
 export class ListSubredditComponent implements OnInit {
 
-  public subReddits: any[];
-  public likedReddits: string[];
-  public dislikedReddits: string[];
+  public subReddits: any[];   // array of objects for the subreddits
+  public likedReddits: string[];  // array of liked subreddits
+  public dislikedReddits: string[];  // array of unliked reddits
 
   constructor(public snackBar: MatSnackBar,
               private fetchSubredditService: FetchSubredditService) {
@@ -34,17 +35,16 @@ export class ListSubredditComponent implements OnInit {
     });
   }
 
-  public fetchContent() {
+  public fetchContent() { // get subreddits from the api
     const ssubReddits = this.fetchSubredditService.getsubreddits(constants.angularSubreddit);
     ssubReddits.then(subredditObj => {
       this.subReddits = subredditObj;
-      console.log(this.subReddits);
     }).catch(error => {
       console.log(error);
     });
   }
 
-  public hideSubreddit(indx) {
+  public hideSubreddit(indx) {  // hide the subreddit on click of close
     this.subReddits[indx].hidden = true;
     if (this.likedReddits.includes(indx)) {
       this.likedReddits.splice(this.likedReddits.indexOf(indx), 1);
@@ -54,7 +54,7 @@ export class ListSubredditComponent implements OnInit {
     }
   }
 
-  public subredditOpinion(opinion: string, indx: string) {
+  public subredditOpinion(opinion: string, indx: string) { // when user clicks like/dislike
     const opinionDiv = document.getElementById(opinion + indx);
     if (this.subReddits[indx].opinion === '') { // selecting opinion first liked/disliked
       this.subReddits[indx].opinion = opinion;
@@ -98,7 +98,7 @@ export class ListSubredditComponent implements OnInit {
     }
   }
 
-  public listOpinions(opinionType: string) {
+  public listOpinions(opinionType: string) { // when user clicks like and dislike on the toolbar
     const listLikeButton = document.getElementById('showLike');
     const listDislikeButton = document.getElementById('showDislike');
     const modifiedSubReddits: any[] = [];
