@@ -28,16 +28,10 @@
 
 .mat-light {
   color: lightgrey;
-  /*border: #0d0d0d;*/
-  /*color: rgba(255, 255, 255, 1);*/
 }
 
-/*mat-card {*/
-  /*top: 45px;*/
-/*}*/
-
 /*.action-button-style {*/
-  /*background-color: lightblue;*/
+  /*background-color: rgb(84, 116, 151);*/
 /*}*/
 
 .like-button-position {
@@ -55,31 +49,11 @@
 }
 
 .refresh-button-position {
-  /* background-color: indigo; */
   position: fixed;
   top: 20px;
   right: 2vw;
   z-index: 1000;
 }
-
-.list-opinion {
-  /*background-color: darkcyan;*/
-}
-
-/*.dont-break-out {*/
-  /*overflow-wrap: break-word;*/
-  /*word-wrap: break-word;*/
-  /*-ms-word-break: break-all;*/
-  /*-ms-hyphens: auto;*/
-  /*-moz-hyphens: auto;*/
-  /*-webkit-hyphens: auto;*/
-  /*hyphens: auto;*/
-
-/*}*/
-
-/*mat-card-content {*/
-  /*padding-bottom: 10px;*/
-/*}*/
 
 mat-card-header {
   height: 100px;

@@ -11,5 +11,5 @@ sub {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: lightblue;
+  background-color: rgb(84, 116, 151);
 }
