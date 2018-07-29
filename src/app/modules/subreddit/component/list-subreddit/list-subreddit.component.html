@@ -7,7 +7,7 @@
                [ngStyle]="{ 'background-image': 'url(' + reddit.thumbnail + ')' }">
           </div>
           <mat-card-title>{{reddit.title}}</mat-card-title>
-          <mat-card-subtitle class="subtitle-style">{{reddit.created|date:'medium'}}</mat-card-subtitle>
+          <mat-card-subtitle class="subtitle-style">{{reddit.subreddit}}  ||  {{reddit.created|date:'medium'}}</mat-card-subtitle>
           <div class="close-button">
             <button mat-icon-button (click)="hideSubreddit(indx)">
               <mat-icon>close</mat-icon>
