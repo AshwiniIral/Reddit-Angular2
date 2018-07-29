@@ -7,14 +7,9 @@ sub {
 }
 
 .toolbar-container {
-  height: 45px;
   position: fixed;
   top: 0;
   left: 0;
-  padding-bottom: 0.5em;
+  z-index: 1000;
   background-color: lightblue;
-}
-
-.content {
-  top: 45px !important;
 }
