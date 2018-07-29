@@ -1,37 +1,44 @@
 <app-home>
-  <div *ngFor="let reddit of subReddits;let indx=index" class="card-style">
-    <mat-card class="subreddit-card" *ngIf="!reddit.hidden">
-      <mat-card-header>
-        <div mat-card-avatar class="thumbnail-image"></div>
-        <mat-card-title>{{reddit.title}}</mat-card-title>
-        <mat-card-subtitle class="subtitle-style">{{reddit.created|date}}</mat-card-subtitle>
-        <div class="close-button">
-          <button mat-icon-button (click)="hideSubreddit(indx)">
-            <mat-icon>close</mat-icon>
+  <div id="card-container">
+    <div *ngFor="let reddit of subReddits;let indx=index" class="subreddit-card">
+      <mat-card *ngIf="!reddit.hidden">
+        <mat-card-header>
+          <div mat-card-avatar class="thumbnail-image"
+               [ngStyle]="{ 'background-image': 'url(' + reddit.thumbnail + ')' }">
+          </div>
+          <mat-card-title>{{reddit.title}}</mat-card-title>
+          <mat-card-subtitle class="subtitle-style">{{reddit.created|date:medium}}</mat-card-subtitle>
+          <div class="close-button">
+            <button mat-icon-button (click)="hideSubreddit(indx)">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <div>
+            <a href={{reddit.url}} target="_blank">{{reddit.url}}</a>
+          </div>
+          <div>
+            <a href={{reddit.url}} target="_blank">
+              <img *ngIf="reddit.preview"
+                   class="img-style"
+                   mat-card-image src={{reddit.preview?.images[0].source.url}}
+                   alt="subreddit image">
+            </a>
+          </div>
+        </mat-card-content>
+        <mat-card-actions class="action-button-style">
+          <button mat-icon-button (click)="subredditOpinion('thumb_up',indx)">
+            <mat-icon class="mat-light" id="thumb_up{{indx}}">thumb_up</mat-icon>
           </button>
-        </div>
-      </mat-card-header>
-      <mat-card-content>
-        <a href={{reddit.url}} target="_blank" class="dont-break-out">{{reddit.url}}</a>
-      </mat-card-content>
-      <a href={{reddit.url}} target="_blank">
-        <img *ngIf="reddit.preview"
-             class="img-style"
-             mat-card-image src={{reddit.preview?.images[0].source.url}}
-             alt="subreddit image">
-      </a>
-      <mat-card-actions class="action-button-style">
-        <button mat-icon-button (click)="subredditOpinion('thumb_up',indx)">
-          <mat-icon class="mat-light" id="thumb_up{{indx}}">thumb_up</mat-icon>
-        </button>
-        <span>{{reddit.ups}}</span>
-        <button mat-icon-button (click)="subredditOpinion('thumb_down',indx)">
-          <mat-icon class="mat-light" id="thumb_down{{indx}}">thumb_down</mat-icon>
-        </button>
-        <span>{{reddit.downs}}</span>
-      </mat-card-actions>
-    </mat-card>
-
+          <span>{{reddit.ups}}</span>
+          <button mat-icon-button (click)="subredditOpinion('thumb_down',indx)">
+            <mat-icon class="mat-light" id="thumb_down{{indx}}">thumb_down</mat-icon>
+          </button>
+          <span>{{reddit.downs}}</span>
+        </mat-card-actions>
+      </mat-card>
+    </div>
     <button mat-icon-button class="like-button-position" id="showLike" (click)="listOpinions('like')">
       <mat-icon>thumb_up</mat-icon>
     </button>

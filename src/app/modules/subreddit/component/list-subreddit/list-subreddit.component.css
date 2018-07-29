@@ -1,14 +1,19 @@
-.card-style {
-  padding-top: 10px;
+#card-container {
+  position: relative;
+  top: 65px;
+  padding-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .subreddit-card {
-  max-width: 30%;
-  margin: 0 auto;
+  width: 30%;
+  margin: 0.5em;
+  flex: 0 0 30%;
 }
 
 .thumbnail-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
 }
 
@@ -21,61 +26,75 @@
   font-size: x-small;
 }
 
-.img-style {
-  /*max-height:50%;*/
-  /*max-width: 50%;*/
-  /*margin:0 auto;*/
-}
-
 .mat-light {
-  border: #0d0d0d;
-  color: rgba(255, 255, 255, 1);
+  color: lightgrey;
+  /*border: #0d0d0d;*/
+  /*color: rgba(255, 255, 255, 1);*/
 }
 
-mat-card {
-  top: 45px;
-}
+/*mat-card {*/
+  /*top: 45px;*/
+/*}*/
 
-.action-button-style {
-  background-color: lightblue;
-}
+/*.action-button-style {*/
+  /*background-color: lightblue;*/
+/*}*/
 
 .like-button-position {
-  background-color: lightblue;
   position: fixed;
-  bottom: 9vh;
-  right: 5vw;
+  top: 20px;
+  right: 10vw;
+  z-index: 1000;
 }
 
 .dislike-button-position {
-  background-color: lightblue;
   position: fixed;
-  bottom: 9vh;
-  right: 2vw;
+  top: 20px;
+  right: 6vw;
+  z-index: 1000;
 }
 
 .refresh-button-position {
-  background-color: lightblue;
+  /* background-color: indigo; */
   position: fixed;
-  bottom: 3vh;
-  right: 3vw;
+  top: 20px;
+  right: 2vw;
+  z-index: 1000;
 }
 
 .list-opinion {
-  background-color: darkcyan;
+  /*background-color: darkcyan;*/
 }
 
-.dont-break-out {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: break-all;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+/*.dont-break-out {*/
+  /*overflow-wrap: break-word;*/
+  /*word-wrap: break-word;*/
+  /*-ms-word-break: break-all;*/
+  /*-ms-hyphens: auto;*/
+  /*-moz-hyphens: auto;*/
+  /*-webkit-hyphens: auto;*/
+  /*hyphens: auto;*/
 
+/*}*/
+
+/*mat-card-content {*/
+  /*padding-bottom: 10px;*/
+/*}*/
+
+mat-card-header {
+  height: 100px;
 }
 
-mat-card-content {
-  padding-bottom: 10px;
+mat-card div:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 50px;
+}
+
+mat-card div:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 250px;
 }
