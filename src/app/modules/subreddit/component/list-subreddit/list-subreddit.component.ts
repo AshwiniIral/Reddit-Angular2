@@ -44,8 +44,8 @@ export class ListSubredditComponent implements OnInit {
     });
   }
 
-  public hideSubreddit(indx) {  // hide the subreddit on click of close
-    this.subReddits[indx].hidden = true;
+  public removeSubreddit(indx) {  // delete the subreddit on click of close
+    this.subReddits.splice(indx, 1)
     if (this.likedReddits.includes(indx)) {
       this.likedReddits.splice(this.likedReddits.indexOf(indx), 1);
     }

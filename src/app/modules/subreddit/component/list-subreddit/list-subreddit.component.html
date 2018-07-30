@@ -9,7 +9,7 @@
           <mat-card-title>{{reddit.title}}</mat-card-title>
           <mat-card-subtitle class="subtitle-style">{{reddit.subreddit}}  ||  {{reddit.created|date:'medium'}}</mat-card-subtitle>
           <div class="close-button">
-            <button mat-icon-button (click)="hideSubreddit(indx)">
+            <button mat-icon-button (click)="removeSubreddit(indx)">
               <mat-icon>close</mat-icon>
             </button>
           </div>
